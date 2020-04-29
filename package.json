@@ -10,9 +10,10 @@
     "scripts": {
       "start": "npm --prefix server start",
       "start_local": "npm --prefix server run start:dev",
-      "build": "npm --prefix client install && npm --prefix client run build",
+      "build-react": "npm --prefix client install && npm --prefix client run build",
       "deploy": "cp -a client/build/. public/",
-      "heroku-postbuild": "npm run build && npm run deploy"
+      "server-deps": "npm --prefix server install",
+      "heroku-postbuild": "npm run build-react && npm run deploy && npm run server-deps"
     },
     "author": "",
     "license": "ISC",
